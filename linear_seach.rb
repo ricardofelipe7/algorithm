@@ -7,7 +7,7 @@ def binary_search(list, n)
 
         return n if list[mid] == n
         return false if list[mid] == nil
-        return false if (high - low).abs == 1
+        return false if (high - low).abs == 2
 
         if list[mid] > n
             high = mid
