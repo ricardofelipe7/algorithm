@@ -11,14 +11,14 @@ def binary_search_iter(arr, el)
     max = arr.length - 1
     min = 0
 
-    while min <= max #know that if the size difference between the min and the max is 0 or negative, we've gone through the whole array and did not find the element
+    while min <= max 
         mid = (min + max)/ 2
         if arr[mid] == el
             return mid
-        elsif arr[mid] > el #if the mid is greater than element looking for, discount right side and focus on left
+        elsif arr[mid] > el
             max = mid - 1
         else 
-            min = mid + 1 #covers remaining logic, if mid is less than element looking for, discount left and focus on right
+            min = mid + 1 
         end
     end
 
