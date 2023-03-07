@@ -1,38 +1,31 @@
-class AlgorithmsSorting
-
-    def counting_sort(a, min, max)
-        a = a
-        return 'invalid range' if min > max
-
-        n = max - min + 1
-        count = Array.new(n, 0)
-        length = a.length
-        output = Array.new(length)
-
-        (0...length).each do |i|
-            count[a[i] - min] += 1
-        end
-
-        (1...n).each do |i|
-            count[i] += 1
-        end
-
-        (0...length).each do |i|
-            output[count[a[i] - min] = a[i]]
-            count[a[i] - min] -= 1
-        end
-
-        (0...length).each do |i|
-            a[i] = output[i]
-        end
-
-        return a
-
+def counting_sort(a=[9,8,7,6], min=0, max=10)
+    if min>max
+        return "invalid range"
     end
+
+    n=max-min+1
+    count=Array.new(n,0)
+    len=a.length
+    output=Array.new(len)
+
+    for i in 0...len
+            count[a[i]-min]+1
+    end
+
+    for i in 1...len
+        count[i]+=count[i-1]
+    end
+
+    for i in 0...len
+        output[count[a[i]-min]-1]=a[i]
+        count[a[i]-min]-=1
+    end
+
+    for i in 0...len
+        a[i]=output[i]
+    end
+
+    return a
 end
 
-a = 'geeksforgeeks'
-min = 0
-max = 10
-
-puts AlgorithmsSorting.new.counting_sort(a, min, max)
+puts 
