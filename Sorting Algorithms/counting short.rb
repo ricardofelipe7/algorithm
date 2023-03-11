@@ -28,4 +28,4 @@ def counting_sort(a=[9,8,7,6], min=0, max=10)
     return a
 end
 
-puts 
+puts counting_sort()
